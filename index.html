@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes with Zulfee - Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- LOGIN SECTION -->
+  <div id="loginContainer" class="card">
+    <h2>Classes with Zulfee - Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- FORM SECTION -->
+  <div id="formContainer" class="card hidden">
+    <h2>MS Windows & Office Registration</h2>
+    <h3>Classes with Zulfee</h3>
+    <form id="regForm">
+      <input type="text" name="FullName" placeholder="Full Name" required>
+      <input type="text" name="FatherName" placeholder="Father’s Name" required>
+
+      <label>Gender:</label><br>
+      <input type="radio" name="Gender" value="Male" required> Male
+      <input type="radio" name="Gender" value="Female"> Female <br><br>
+
+      <input type="date" name="DOB" required>
+      <input type="text" name="CNIC" placeholder="CNIC / ID Number" required>
+      <input type="tel" name="Phone" placeholder="Contact Number" required>
+      <input type="email" name="Email" placeholder="Email Address" required>
+      <input type="text" name="Address" placeholder="Residential Address" required>
+
+      <label>Qualification:</label><br>
+      <select name="Qualification" required>
+        <option>Matric</option>
+        <option>Intermediate</option>
+        <option>Graduate</option>
+        <option>Post Graduate</option>
+        <option>Other</option>
+      </select><br><br>
+
+      <label>Course Level:</label><br>
+      <input type="radio" name="Course" value="Beginner" required> Beginner Level
+      <input type="radio" name="Course" value="Advanced"> Advanced Level <br><br>
+
+      <label>Batch Timing:</label>
+      <input type="text" name="BatchTiming" value="7:30 PM to 9:00 PM" readonly>
+
+      <label>Mode:</label><br>
+      <input type="radio" name="Mode" value="Online" required> Online
+      <input type="radio" name="Mode" value="On-Campus"> On-Campus <br><br>
+
+      <textarea name="Source" placeholder="How did you hear about us?" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
