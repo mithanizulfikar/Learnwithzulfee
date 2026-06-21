@@ -1,6 +1,7 @@
 function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const data = JSON.parse(e.postData.contents);
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
   sheet.appendRow([
     new Date(),
@@ -19,8 +20,13 @@ function doPost(e) {
     data.Source
   ]);
 
-  GmailApp.sendEmail(data.Email, "Registration Confirmation",
-    `Dear ${data.FullName},\n\nThank you for registering for the Microsoft Windows & Office course.\n\nBatch Time: ${data.BatchTiming}\nLevel: ${data.Course}\n\nRegards,\nTraining Team`);
+MailApp.sendEmail({
+    to: data.Email,
+    subject: "Registration Confirmation",
+    body: "Thank you " + data.FullName
+  });
 
-  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+  return ContentService
+    .createTextOutput("success")
+    .setMimeType(ContentService.MimeType.TEXT);
 }
