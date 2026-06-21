@@ -16,7 +16,7 @@ document.getElementById("regForm").addEventListener("submit", function(e){
   const data = {};
   formData.forEach((val, key) => data[key] = val);
 
-  fetch("YOUR_GOOGLE_SCRIPT_URL", {
+  fetch("https://mithanizulfikar.github.io/Learnwithzulfee/", {
     method: "POST",
     body: JSON.stringify(data)
   }).then(res => {
